@@ -1,11 +1,8 @@
 import os
-from dotenv import load_dotenv, find_dotenv
 from app.main.base_service import service
 
-load_dotenv(find_dotenv())
-
 env = os.environ.get('FLASK_ENV')
-host = os.environ.get('HOST')
+host = os.environ.get('HEROKU_APP_NAME' or 'HOST') + '.herokuapp.com'
 port = os.environ.get('PORT')
 
 if env == "development":

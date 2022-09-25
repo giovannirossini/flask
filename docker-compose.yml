@@ -1,8 +1,10 @@
 version: "3.9"
 services:
   api:
+    env_file:
+      - .env
     build: .
-    ports: 
+    ports:
       - 80:80
     volumes:
       - "./app:/app/app/"

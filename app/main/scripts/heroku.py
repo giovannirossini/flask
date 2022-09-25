@@ -48,11 +48,11 @@ class postUser(Resource):
         url = f"https://simple-deno.herokuapp.com/"
         print(url)
         try:
-            put = urllib.request.Request(url, method='POST')
-            response = urllib.request.urlopen(put)
-            data = json.loads(response.read())
+            # put = urllib.request.Request(url, method='POST')
+            # response = urllib.request.urlopen(put)
+            # data = json.loads(response.read())
 
-            return  jsonify(data)
+            return  jsonify({})
         except Exception as e:
             return {
                 'Error': str(e)
@@ -66,9 +66,9 @@ class updateUser(Resource):
         print(url)
         try:
             data = {}
-            put = urllib.request.Request(url,method='PUT')
-            response = urllib.request.urlopen(put)
-            data = json.loads(response.read())
+            # put = urllib.request.Request(url,method='PUT')
+            # response = urllib.request.urlopen(put)
+            # data = json.loads(response.read())
 
             return  jsonify(data)
         except Exception as e:
@@ -82,11 +82,11 @@ class deleteUser(Resource):
         url = "https://simple-deno.herokuapp.com/" + str(id)
         print(url)
         try:
-            delete = urllib.request.Request(url, method='DELETE')
-            response = urllib.request.urlopen(delete)
-            data = json.loads(response.read())
+            # delete = urllib.request.Request(url, method='DELETE')
+            # response = urllib.request.urlopen(delete)
+            # data = json.loads(response.read())
 
-            return  jsonify(data)
+            return  jsonify({})
         except Exception as e:
             return {
                 'Error': str(e)
