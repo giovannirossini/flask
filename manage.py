@@ -2,7 +2,7 @@ import os
 from app.main.base_service import service
 
 env = os.environ.get('FLASK_ENV')
-host = os.environ.get('HEROKU_APP_NAME' or 'HOST' + '.herokuapp.com')
+host = os.environ.get('HOST')
 port = os.environ.get('PORT')
 
 if env == "development":
