@@ -13,7 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/
 
-ENV FLASK_ENV=development
-ENV FLASK_APP=app/app.py
-
 CMD python wsgi.py
