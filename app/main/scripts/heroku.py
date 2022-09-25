@@ -7,7 +7,7 @@ from datetime import datetime
 api = Namespace('deno-app', 'Heroku Consulting Deno App')
 
 
-@api.route('/')
+@api.route('/users')
 class getUsers(Resource):
     def get(self):
         url = "https://simple-deno.herokuapp.com/"
@@ -23,8 +23,8 @@ class getUsers(Resource):
             }, 500
 
 
-@api.route('/<id>')
-@api.doc(params={'id': {'description': 'User ID'}})
+@api.route('/<userId>')
+@api.doc(params={'userId': {'description': 'User ID'}})
 class getUser(Resource):
     def get(self, id):
         url = "https://simple-deno.herokuapp.com/" + str(id)
@@ -58,11 +58,11 @@ class postUser(Resource):
                 'Error': str(e)
             }, 500
 
-@api.route('/<id>')
-@api.doc(params={'id': {'description': 'User ID'}})
+@api.route('/<json>')
+@api.doc(params={'json': {'description': 'JSON with the fields to update by user id'}})
 class updateUser(Resource):
-    def put(self,id):
-        url = "https://simple-deno.herokuapp.com/" + str(id)
+    def put(self,json):
+        url = "https://simple-deno.herokuapp.com/" + str(json)
         print(url)
         try:
             data = {}
@@ -77,6 +77,7 @@ class updateUser(Resource):
             }, 500
 
 @api.route('/<id>')
+@api.doc(params={'id': {'description': 'User ID'}})
 class deleteUser(Resource):
     def delete(self,id):
         url = "https://simple-deno.herokuapp.com/" + str(id)
