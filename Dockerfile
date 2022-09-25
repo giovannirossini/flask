@@ -16,4 +16,4 @@ COPY . /app/
 ENV FLASK_ENV=development
 ENV FLASK_APP=app/app.py
 
-CMD python manage.py
+CMD python wsgi.py
